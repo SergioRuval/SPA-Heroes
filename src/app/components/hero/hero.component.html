@@ -1,0 +1,20 @@
+<div class="fast fadeIn">
+    <div class="row">
+        <h2 class="col-10"> {{hero.nombre}} ( <small> {{hero.aparicion}} </small> )</h2>
+        <div class="col-2">
+            <button class="btn btn-outline-warning btn-block" [routerLink]="['../../heroes']"> Regresar </button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-4">
+            <!-- <img src="../../../{{ hero.img }}" alt="Imagen de heroe" class="animated fadeIn"> -->
+            <img [src]="hero.img" alt="Imagen de heroe" class="animated fadeIn">
+        </div>
+        <div class="col-8">
+            <h3>Casa: {{hero.casa}} <img *ngIf="getCasa()" class="img_logo" src="../../../assets/img/Marvel.jpeg" alt=""><img *ngIf="!getCasa()" class="img_logo" src="../../../assets/img/DC.jpeg" alt=""></h3>
+            <hr>
+            <p>Bio: {{hero.bio}}</p>
+        </div>
+    </div>
+</div>

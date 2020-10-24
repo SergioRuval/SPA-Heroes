@@ -1,0 +1,19 @@
+<div class="fast fadeIn mb-5 pb-5">
+    <h2 class="display-4 pb-4">Resultados para <small>"{{strBusqueda}}"</small></h2>
+    
+    <div class="alert alert-info" role="alert" *ngIf="resultados == 0">
+      No se encuentran resultados para "<b>{{strBusqueda}}</b>"
+    </div>
+
+    <div class="card-columns">
+      <!-- La declaración let i = index guarda y contabiliza cada iteración del ngFor -->
+      <div class="card" *ngFor="let hero of resultados; let i = index">
+        <img src="../../../{{ hero.img }}" class="card-img-top animated fadeIn" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ hero.nombre }}</h5>
+          <p class="card-text">{{ hero.bio }}</p>
+          <small>{{ hero.aparicion }}</small>
+        </div>
+      </div>
+    </div>
+  </div>
