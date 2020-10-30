@@ -7,13 +7,6 @@
 
     <div class="card-columns">
       <!-- La declaración let i = index guarda y contabiliza cada iteración del ngFor -->
-      <div class="card" *ngFor="let hero of resultados; let i = index">
-        <img src="../../../{{ hero.img }}" class="card-img-top animated fadeIn" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">{{ hero.nombre }}</h5>
-          <p class="card-text">{{ hero.bio }}</p>
-          <small>{{ hero.aparicion }}</small>
-        </div>
-      </div>
+      <app-hero-card [hero]="hero" [index]="hero['index']" *ngFor="let hero of resultados; let i = index"></app-hero-card>
     </div>
   </div>

@@ -27,8 +27,8 @@
           <a class="nav-link" [routerLink]="['about']">About</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" #valorBusqueda>
+      <form class="form-inline my-2 my-lg-0" (submit)="$event.preventDefault()">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" #valorBusqueda (keyup.enter)="search(valorBusqueda.value)">
         <button class="btn btn-success my-2 my-sm-0" type="button" (click)="search(valorBusqueda.value)">Search</button>
       </form>
     </div>

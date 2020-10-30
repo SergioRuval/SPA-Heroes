@@ -1,0 +1,11 @@
+<div class="card animated fadeIn border" [ngClass]="{'border-primary' : hero.casa == 'DC', 'border-danger' : hero.casa == 'Marvel'}" >
+    <img src="../../../{{ hero.img }}" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{ hero.nombre }}</h5>
+      <p class="card-text">{{ hero.bio.substring(0, 100) }}...</p>
+      <small>{{ hero.aparicion }}</small>
+    </div>
+    <!-- [routerLink]="['/hero', i]" La coma en routerLink se usa para mandar parámetros, en este caso se pasa el índice como parámetro de la ruta -->
+    <!-- (click)="navegar(i)" -->
+    <button (click)="navegar()" class="btn btn-outline-success btn-block" >Ver más...</button>
+  </div>

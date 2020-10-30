@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { Error404Component } from './components/error404/error404.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
+import { HeroCardComponent } from './components/hero-card/hero-card.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
     HomeComponent,
     Error404Component,
     HeroComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    HeroCardComponent
   ],
   imports: [
     BrowserModule,

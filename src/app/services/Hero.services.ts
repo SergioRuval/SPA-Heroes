@@ -78,9 +78,11 @@ export class HeroService {
         termino = termino.toLowerCase();
 
         // Usamos un ciclo para comparar el térmno búsqueda contra la propiedad nombre de cada héroe
-        for ( const hero of this.heroes ){
+        for ( let i = 0; i < this.heroes.length; i++ ){
+            let hero = this.heroes[i];
             const nombre = hero['nombre'].toLowerCase();
             if (nombre.indexOf(termino) >= 0 ){
+                hero['index'] = i;
                 resultados.push(hero);
             }
         }
