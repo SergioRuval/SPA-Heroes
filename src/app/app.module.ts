@@ -14,6 +14,7 @@ import { Error404Component } from './components/error404/error404.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { HeroCardComponent } from './components/hero-card/hero-card.component';
+import { PipesComponent } from './components/pipes/pipes.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HeroCardComponent } from './components/hero-card/hero-card.component';
     Error404Component,
     HeroComponent,
     BuscadorComponent,
-    HeroCardComponent
+    HeroCardComponent,
+    PipesComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,7 @@ import { HeroCardComponent } from './components/hero-card/hero-card.component';
       {path: '', component: HomeComponent},
       {path: 'home', component: HomeComponent},
       {path: 'about', component: AboutComponent},
+      {path: 'pipes', component: PipesComponent},
       {path: 'heroes', component: HeroesComponent},
       // Gracias al /: parametros nuestra ruta se prepara para decidir un parámetro o un valor dinámico
       {path: 'hero/:id', component: HeroComponent},
