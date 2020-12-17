@@ -19,7 +19,9 @@ export class HeroesComponent implements OnInit {
   // Se ejcuta en cuanto se termina de rederizar el componente
   ngOnInit(): void {
     // console.log(this._heroService.getHeroes());
-    this.arrayHeroes = this._heroService.getHeroes();
+    this._heroService.getHeroes().subscribe( (data: any) => {
+      this.arrayHeroes = data;
+    });
   }
 
   navegar(index) {

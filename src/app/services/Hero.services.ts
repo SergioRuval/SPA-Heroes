@@ -1,5 +1,5 @@
-import { from } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 // Root
 @Injectable({
@@ -60,16 +60,16 @@ export class HeroService {
         }
     ];
 
-    constructor() {
+    constructor(private http: HttpClient) {
         console.log('HeroServiceWorks');
     }
 
     public getHeroes(){
-        return this.heroes;
+        return this.http.get('http://localhost:3000/heroesActive');
     }
 
     public getHero(id){
-        return this.heroes[id];
+        return this.http.get(`http://localhost:3000/heroe/${id}`);
     }
 
     public getNombre(termino){
@@ -77,16 +77,16 @@ export class HeroService {
         let resultados: any = [];
         termino = termino.toLowerCase();
 
-        // Usamos un ciclo para comparar el térmno búsqueda contra la propiedad nombre de cada héroe
-        for ( let i = 0; i < this.heroes.length; i++ ){
-            let hero = this.heroes[i];
-            const nombre = hero['nombre'].toLowerCase();
-            if (nombre.indexOf(termino) >= 0 ){
-                hero['index'] = i;
-                resultados.push(hero);
-            }
-        }
+        // // Usamos un ciclo para comparar el térmno búsqueda contra la propiedad nombre de cada héroe
+        // for ( let i = 0; i < this.heroes.length; i++ ){
+        //     let hero = this.heroes[i];
+        //     const nombre = hero['nombre'].toLowerCase();
+        //     if (nombre.indexOf(termino) >= 0 ){
+        //         hero['index'] = i;
+        //         resultados.push(hero);
+        //     }
+        // }
 
-        return resultados;
+        return this.http.get(`http://localhost:3000/heroesTerm?termino=${termino}`);
     }
 }

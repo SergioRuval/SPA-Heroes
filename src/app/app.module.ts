@@ -15,6 +15,10 @@ import { HeroComponent } from './components/hero/hero.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { HeroCardComponent } from './components/hero-card/hero-card.component';
 import { PipesComponent } from './components/pipes/pipes.component';
+import { CapitalizadoPipe } from './pipes/capitalizado/capitalizado.pipe';
+import { DomSeguroPipe } from './pipes/domSeguro/dom-seguro.pipe';
+import { PasswordPipe } from './pipes/password/password.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,10 @@ import { PipesComponent } from './components/pipes/pipes.component';
     HeroComponent,
     BuscadorComponent,
     HeroCardComponent,
-    PipesComponent
+    PipesComponent,
+    CapitalizadoPipe,
+    DomSeguroPipe,
+    PasswordPipe
   ],
   imports: [
     BrowserModule,
@@ -42,7 +49,8 @@ import { PipesComponent } from './components/pipes/pipes.component';
       {path: 'hero/:id', component: HeroComponent},
       {path: 'results/:termino',component: BuscadorComponent},
       {path: '**', pathMatch: 'full', component: Error404Component}
-    ])
+    ]),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

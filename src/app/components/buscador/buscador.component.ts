@@ -19,7 +19,9 @@ export class BuscadorComponent implements OnInit {
     // Obtener parámetros de la ruta relativa
     this._activatedRoute.params.subscribe( params => {
       this.strBusqueda = params['termino'];
-      this.resultados = this._heroService.getNombre(params['termino']);
+      this._heroService.getNombre(params['termino']).subscribe( data => {
+        this.resultados = data;
+      });
       console.log(this.resultados);
     });
     console.log(this.resultados);

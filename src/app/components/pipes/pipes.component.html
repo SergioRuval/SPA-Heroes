@@ -19,6 +19,20 @@
                     <td>lowercase</td>
                     <td>{{nombre | lowercase}}</td>
                 </tr>
+
+                <!-- Primer Pipe personalizado (capitalizado) -->
+                <tr>
+                    <td>{{nombreAlterno}}</td>
+                    <td>capitalizado:true <small>(personalizado)</small></td>
+                    <td>{{nombreAlterno | capitalizado:true}}</td>
+                </tr>
+
+                <tr>
+                    <td>{{nombreAlterno}}</td>
+                    <td>capitalizado:false <small>(personalizado)</small></td>
+                    <td>{{nombreAlterno | capitalizado:false}}</td>
+                </tr>
+
                 <tr>
                     <td>{{nombre}}</td>
                     <td>slice:3</td>
@@ -54,6 +68,16 @@
                     <td>Currency</td>
                     <td>{{precio | currency:'EUR'}}</td>
                 </tr>
+
+                <!-- Segundo pipe personalizado (Password) -->
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>Password <small>(personalizado)</small>
+                        <br>
+                        <button class="btn btn-primary" (click)="mostrar = !mostrar">Mostrar / Ocultar</button>
+                    </td>
+                    <td>{{nombre | password:mostrar}}</td>
+                </tr>
             </tbody>
         </table>
 
@@ -62,5 +86,13 @@
             <li *ngFor="let item of arrayPrueba | slice : 2 : 6"> {{item}} </li>
         </ul>
 
+    </div>
+</div>
+
+<h3>Dom Seguro</h3>
+<hr>
+<div class="row pb-5 mb-5">
+    <div class="col">
+        <iframe width="560" height="315" [src]="videoURL | domSeguro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 </div>
